@@ -8,6 +8,25 @@
     html, body{
 height: 100%;
 }
+a {
+    background-color: red;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 12px;
+}
+
+a:hover {
+  background-color: ;
+}
+
+a:active {
+  box-shadow: none;
+  top: 5px;
+}
 body {
     background-image: url(https://i.imgur.com/gfTQIzd.jpg) ;
     background-position: center center;
@@ -44,7 +63,9 @@ ul, li, h1 {
         /* background: rgba(0, 151, 19, 0.6); */
 
 }
-
+h2 {
+  text-align: center;
+}
     </style>
   </head>
   <body>
@@ -57,7 +78,8 @@ ul, li, h1 {
 <div class="wrapper" class="opaque">
 
 </div>
-      <h1>Hello INDEX</h1>
+<h2>Calculate Goal Pace</h2>
+      <h1>Current Running Progress</h1>
         <ul>
           <% for(let i = 0; i < runs.length; i++) { %>
           <li>
@@ -75,7 +97,9 @@ ul, li, h1 {
         </ul>
         <nav>
           <a href="/runs/new"> Log a new run! </a>
-      <h3>test man test</h3>
+          <h3>Live Life a step at a time</h3>
+          <h5>*User logins coming soon!</h5>
+
     </body>
 
 

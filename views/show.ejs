@@ -16,7 +16,7 @@
 
           }
           body {
-              background-image: url(https://i.imgur.com/e5q7T7z.jpg) ;
+              background-image: url(https://i.imgur.com/Ug5xzuZ.jpg) ;
               background-position: center center;
               background-repeat:  no-repeat;
               background-attachment: fixed;
@@ -51,10 +51,20 @@
                   /* background: rgba(0, 151, 19, 0.6); */
 
           }
+
         </style>
     </head>
     <body>
-      <h1> This is the show.ejs file</h1>
-      Your Run <%=run.name%> was <%=run.distance%> miles long! Great Job!!
+      <h1> View your run details here</h1>
+      Your Run <%=run.name%> that lasted <%=run.minutes%> minutes long was also <%=run.distance%> miles long! Great Job!!
+
+      Details are here: <%= run.runDescription %>
+
+      <p>Distance: <input type="text" placeholder="miles" id="distance"/> miles</p>
+	<p>Time: <input type="text" placeholder="hours" id="hours"/> : <input type="text" placeholder="minutes" id="minutes"/> : <input type="text" placeholder="seconds" id="seconds"/></p>
+	<p><button id="calculate_btn">Calculate Pace</button></p>
+	<p id="pace"/>
+
+	<script type="text/javascript" src="../js-pace-calculator/calculator.js"></script>
     </body>
 </html>
