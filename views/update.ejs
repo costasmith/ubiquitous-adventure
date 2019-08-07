@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body, form {
+        background-color: aquamarine;
+        display: flex;
+        font-family: fantasy;
+        flex-direction: column;
+        text-align: center;
+
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <h1>Hello UPDATE brother</h1>
+      <form class="/runs/<%=run.id%>?_method=PUT" action="index.html" method="POST">
+        Name: <input type="text" name="name" value="<%=run.hours%>"/><br/>
+          Color: <input type="text" name="color" value="<%=run.minutes%>"/><br/>
+          Was it a good run?
+          <input
+              type="checkbox"
+              name="runGood"
+              <%if(run.runGood === true) { %>
+                  checked
+              <% } %>
+              />
+          <br/>
+          <input type="submit" value="Submit Changes"/>
+        <!-- NEed a way to populate a pace after user inputs the distance adn time
+        var totalMinutes = hours * 60 + minutes + seconds / 60,
+        		pace = totalMinutes / miles,
+        		paceMinutes = Math.floor(pace),
+        		paceSeconds = Math.round((pace - paceMinutes) * 60);
+      -->
+        <input type="submit" value ="Create Run"/>
+        <button type="submit" name="button">Submit here</button>
+      </form>
+      <h3>test man test</h3>
+    </body>
+  </body>
+</html>

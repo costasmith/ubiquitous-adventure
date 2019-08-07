@@ -8,19 +8,24 @@
         background-color: aquamarine;
         display: flex;
         font-family: fantasy;
+        flex-direction: column;
+        text-align: center;
 
       }
     </style>
   </head>
   <body>
     <body>
-      <h1>Hello brother</h1>
-      <form class="/index.ejs" action="index.html" method="post">
-        <input type="text" name="Name" value="huh"></br>
-        <input type="text" name="Name" value="huh"></br>
-        <input type="text" name="Name" value="huh"></br>
-        <input type="text" name="Name" value="huh"></br>
-      </form>
+      <h1>Hello INDEX</h1>
+        <ul>
+          <% for(let i = 0; i < runs.length; i++) { %>
+          <li>
+            On run: <%=i; %>  You ran <%=runs[i].distance; %> miles!
+             <% } %>
+           </li>
+        </ul>
+        <nav>
+          <a href="/runs/new"> Log a new run! </a>
       <h3>test man test</h3>
     </body>
   </body>

@@ -8,6 +8,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Run = require('./models/runs.js')
 //___________________
 //Port
 //___________________
@@ -16,6 +17,12 @@ const PORT = process.env.PORT || 3001;
 
 //___________________
 //Database
+//database
+var words = {
+  "rainbow": 5,
+  "univcorn": 3,
+  "poop": 2
+}
 //___________________
 // How to connect to the database either via heroku or locally
 const MONGODB_URI = process.env.MONGODB_URI;
@@ -52,10 +59,82 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.render('index.ejs');
+app.get('/runs', (req, res) => {
+    Run.find({}, (error, allRuns) => {//takes two parameters
+    res.render('index.ejs', {
+    runs: allRuns
+  })
+  })
+
+
+})
+// app.get('/runs', (req, res) => {
+//   res.render('show.ejs')
+// })
+app.get('/runs/new' , (req, res) => {
+  res.render('new.ejs');
 });
 
+app.post('/runs', (req, res) => {
+  // res.send(req.body)
+  Run.create(req.body, (error, createdRun) => {
+    // console.log(error);
+    res.redirect('/runs')
+  })
+})
+// app.get('/all', sendAll);
+//
+// function sendAll(request, response) {
+//   response.send(words);
+//
+// }
+// //edit
+// app.get('/run/:id/edit', (req, res) => {
+//     Fruit.findById(req.params.id, (error, foundRun) => {
+//         res.render(
+//             'update.ejs',
+//             {
+//                 run:foundRun
+//             }
+//         );
+//     });
+// });
+// //
+// app.get('/run', (req, res) => {
+//   console.log('running');
+//   // res.render('./new.ejs')
+//
+// })
+//
+// app.get('/run/new', (req, res) => {
+//   console.log('new run');
+//   res.send('newrun')
+// })
+// app.get('/run/new/:id', (req, res) => {
+//     Run.findById(req.params.id, (err, foundRun) => {
+//         res.render('show.ejs',{
+//             run:foundRun
+//         });
+//     });
+// });
+//
+// app.post('/', (req, res) => {
+//     if(req.body.runGood === 'on'){
+//         req.body.runGood = true;
+//     } else {
+//         req.body.runGood = false;
+//     }
+//     Run.create(req.body, (error, createdRun) => {
+//         // res.redirect('/Run');
+//         res.send("create post")
+//     });
+// });
+
+// app.get('/run/:runnum', addRun);
+// function addRun(req, res) {
+//   var data = request.params;
+//   var log = data.distance
+// }
 //___________________
 //Listener
 //___________________
