@@ -12,6 +12,9 @@
         text-align: center;
 
       }
+      a {
+
+      }
     </style>
   </head>
   <body>
@@ -20,9 +23,16 @@
         <ul>
           <% for(let i = 0; i < runs.length; i++) { %>
           <li>
-            On run: <%=i; %>  You ran <%=runs[i].distance; %> miles!
+            On run: <a href="/runs/<%=runs[i].id; %>">
+
+              <%=i; %>  You ran <%=runs[i].distance; %> miles!
+              <form action="/runs/<%=runs[i].id%>?_method=DELETE" method="POST">
+                 <input type="submit" name="" value="DELETE">
+              </form>
              <% } %>
+
            </li>
+
         </ul>
         <nav>
           <a href="/runs/new"> Log a new run! </a>

@@ -82,6 +82,36 @@ app.post('/runs', (req, res) => {
     res.redirect('/runs')
   })
 })
+
+// app.get('/run/:id', (req, res) => {
+//   Run.findById(req.params.id, (err, foundRun) => {
+//     res.send(foundRun)
+//   })
+// })
+// app.get('/runs/:id', (req, res) => {
+//   Run.find({}, (err, foundRun) => {
+//     res.render('index.ejs', {
+//       runs:foundRun
+//     })
+//   })
+// })
+
+app.get('/runs/:id', (req, res) => {
+  Run.findById(req.params.id, (err, foundRun) => {//foundRun comes from database
+    res.render('show.ejs',{
+      run:foundRun//this comes from property
+    })
+    // res.render('show.ejs',{
+      // run:foundRun
+    // })
+  })
+})
+app.delete('/runs/:id', (req, res) => {
+  Run.findByIdAndRemove(req.params.id, (error, foundRun) => {
+    res.redirect('/runs')
+  })
+  // res.send('delete man')
+})
 // app.get('/all', sendAll);
 //
 // function sendAll(request, response) {
