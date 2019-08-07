@@ -127,6 +127,11 @@ app.get('/runs/:id/edit', (req, res) => {
   })
   // res.send('haha')
 })
+app.put('/runs/:id', (req, res) => {
+  Run.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedRun) => {
+    res.redirect('/runs')
+  })
+})
 // app.get('/all', sendAll);
 //
 // function sendAll(request, response) {
@@ -134,53 +139,8 @@ app.get('/runs/:id/edit', (req, res) => {
 //
 // }
 // //edit
-// app.get('/run/:id/edit', (req, res) => {
-//     Fruit.findById(req.params.id, (error, foundRun) => {
-//         res.render(
-//             'update.ejs',
-//             {
-//                 run:foundRun
-//             }
-//         );
-//     });
-// });
-// //
-// app.get('/run', (req, res) => {
-//   console.log('running');
-//   // res.render('./new.ejs')
 //
-// })
-//
-// app.get('/run/new', (req, res) => {
-//   console.log('new run');
-//   res.send('newrun')
-// })
-// app.get('/run/new/:id', (req, res) => {
-//     Run.findById(req.params.id, (err, foundRun) => {
-//         res.render('show.ejs',{
-//             run:foundRun
-//         });
-//     });
-// });
-//
-// app.post('/', (req, res) => {
-//     if(req.body.runGood === 'on'){
-//         req.body.runGood = true;
-//     } else {
-//         req.body.runGood = false;
-//     }
-//     Run.create(req.body, (error, createdRun) => {
-//         // res.redirect('/Run');
-//         res.send("create post")
-//     });
-// });
-
-// app.get('/run/:runnum', addRun);
-// function addRun(req, res) {
-//   var data = request.params;
-//   var log = data.distance
-// }
-//___________________
+//  ______________
 //Listener
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));

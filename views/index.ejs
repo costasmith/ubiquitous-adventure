@@ -3,22 +3,60 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
     <style media="screen">
-      body, form {
-        background-color: aquamarine;
-        display: flex;
-        font-family: fantasy;
-        flex-direction: column;
-        text-align: center;
+    html, body{
+height: 100%;
+}
+body {
+    background-image: url(https://i.imgur.com/gfTQIzd.jpg) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999;
 
-      }
-      a {
+}
 
-      }
+div, body, a{
+margin: 0;
+padding: 0;
+font-family: exo, sans-serif;
+color: white
+
+}
+.wrapper {
+height: 100%;
+width: 100%;
+}
+
+
+
+ul, li, h1 {
+  text-align: center;
+  list-style-type: none;
+  font-family: fantasy;
+
+}
+/* .opaque {//IMAGE NOT OPAQUe :( */
+
+       /*setting alpha = 0.6*/
+        /* background: rgba(0, 151, 19, 0.6); */
+
+}
+
     </style>
   </head>
   <body>
     <body>
+      <!-- <div class="image">
+      <img src="https://i.imgur.com/e5q7T7z.jpg" alt="" />
+
+      <h2><span>Welcome!!<span class='spacer'></span><br /><span class='spacer'></span></span>Log your Daily Run</h2> -->
+      <link href='https://fonts.googleapis.com/css?family=Exo:400,900' rel='stylesheet' type='text/css'>
+<div class="wrapper" class="opaque">
+
+</div>
       <h1>Hello INDEX</h1>
         <ul>
           <% for(let i = 0; i < runs.length; i++) { %>
@@ -39,5 +77,7 @@
           <a href="/runs/new"> Log a new run! </a>
       <h3>test man test</h3>
     </body>
+
+
   </body>
 </html>
