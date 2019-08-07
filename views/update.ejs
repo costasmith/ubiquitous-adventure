@@ -16,19 +16,12 @@
   </head>
   <body>
     <body>
-      <h1>Hello UPDATE brother</h1>
-      <form class="/runs/<%=run.id%>?_method=PUT" action="index.html" method="POST">
-        Name: <input type="text" name="name" value="<%=run.hours%>"/><br/>
-          Color: <input type="text" name="color" value="<%=run.minutes%>"/><br/>
-          Was it a good run?
-          <input
-              type="checkbox"
-              name="runGood"
-              <%if(run.runGood === true) { %>
-                  checked
-              <% } %>
-              />
-          <br/>
+      <h1>Update your run!</h1>
+      <form action="/runs/<%=run.id%>?_method=PUT"  method="POST">
+        Name: <input type="text" name="name" value="<%=run.name%>"/><br/>
+          Minutes: <input type="text" name="time" value="<%=run.minutes%>"/><br/>
+          Distance: <input type="text" name="distance" value="<%=run.distance%>"/><br/>
+
           <input type="submit" value="Submit Changes"/>
         <!-- NEed a way to populate a pace after user inputs the distance adn time
         var totalMinutes = hours * 60 + minutes + seconds / 60,

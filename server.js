@@ -59,6 +59,9 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
+app.get('/', (req,res) => {
+  res.redirect('/runs')
+})
 app.get('/runs', (req, res) => {
     Run.find({}, (error, allRuns) => {//takes two parameters
     res.render('index.ejs', {
@@ -111,6 +114,18 @@ app.delete('/runs/:id', (req, res) => {
     res.redirect('/runs')
   })
   // res.send('delete man')
+})
+//to post use form to delete use anchor tage or vice versa
+app.get('/runs/:id/edit', (req, res) => {
+  Run.findById(req.params.id, (err, foundRun) => {
+    res.render(
+      'update.ejs',
+      {
+        run: foundRun
+      }
+    )
+  })
+  // res.send('haha')
 })
 // app.get('/all', sendAll);
 //

@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const runSchema = new mongoose. Schema({
   name: {type: String, required: true},
   distance: {type: Number, required: true},
-  hours: Number,
+  minutes: Number,
   // minutes: {type: Number, required: true},
   // seconds: {type: Number, required: true},
   runDescription: String
