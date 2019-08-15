@@ -19,6 +19,7 @@
           background-attachment: fixed;
           background-size:  cover;
           background-color: #999;
+          opacity: 0.1
 
       }
 
@@ -42,6 +43,17 @@
         font-family: fantasy;
 
       }
+
+      h1, h2 {
+        display: inline-block;
+          padding: 20px;
+          margin: 20px;
+          background-color: blue;
+          color: #fff;
+          /* opacity: 0.5; */
+
+
+}
       /* .opaque {//IMAGE NOT OPAQUe :( */
 
              /*setting alpha = 0.6*/
@@ -52,13 +64,16 @@
   </head>
   <body>
     <body>
-      
+
 
 
       <h2>Train Endure Pain and don't conplain :)</h2>
 
 </div>
-      <h1>Update your run!</h1>
+  <div class="notTransparent">
+
+
+      <h1 class="title">Update your run!</h1>
       <form action="/runs/<%=run.id%>?_method=PUT"  method="POST">
         Name: <input type="text" name="name" value="<%=run.name%>"/><br/>
           Minutes: <input type="text" name="time" value="<%=run.minutes%>"/><br/>
@@ -74,6 +89,7 @@
         <input type="submit" value ="Create Another Run?"/>
         <!-- <button type="submit" name="button">Submit here</button> -->
       </form>
+  </div>
       <h3>test man test</h3>
     </body>
   </body>

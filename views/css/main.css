@@ -1,0 +1,12 @@
+body{
+  background-image: url("https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2017%2F05%2Fmain%2Ffarro-burrito-bowls-1707p59_0_0.jpg%3Fitok%3Dl0InYppq%261539287507&q=85");
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  height: 750px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5%;
+}
